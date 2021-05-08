@@ -29,9 +29,9 @@ class NambiCoinBlock():
 # Now, let's perform some transactions.
 
 
-t1 = "Aditya sends 2.0 NBC to Ramesh."
+t1 = "Aditya sends 1.56 NBC to Ramesh."
 
-t2 = "Ramesh sends 4.1 NBC to Ahilya."
+t2 = "Ramesh sends 4.3 NBC to Ahilya."
 
 t3 = "Gaurav sends 3.2 NBC to Aditya."
 
@@ -66,3 +66,69 @@ print()
 
 
 print(genesis_block.block_hash)
+
+
+second_block = NambiCoinBlock(genesis_block.block_hash, [t3, t4])
+
+
+print()
+
+
+print(second_block.block_data)
+
+
+print()
+
+
+print(second_block.block_hash)
+
+
+
+third_block = NambiCoinBlock(second_block.block_hash, [t5, t6])
+
+
+print()
+
+
+print(third_block.block_data)
+
+
+print()
+
+
+print(third_block.block_hash)
+
+
+
+
+
+def create_block(block_hash_code, transaction_list):
+
+
+
+
+
+    return NambiCoinBlock(block_hash_code, transaction_list)
+
+
+
+
+
+fourth_block = create_block(third_block.block_hash, [t7])
+
+
+print()
+
+
+print()
+
+
+print(fourth_block.block_data)
+
+
+print()
+
+print()
+
+
+print(fourth_block.block_hash)
